@@ -1,0 +1,151 @@
+/* ||CSS RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* GENERAL ELEMENTS */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    background-color: violet;
+    background-image: radial-gradient(white,gray, hsla(0, 1%, 27%, 0.927));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.header,.footer{
+    background-color: aliceblue;
+    position: sticky;
+    text-align: center;
+}
+.header{
+    top:0;
+    border-bottom: 1px solid black;
+}
+h1{
+    padding: 0.1em;
+}
+.mainpart{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    gap:1rem;
+    padding: 1rem;
+}
+.footer{
+    bottom:0;
+    border-top:2px solid black;
+    font-weight: bolder;
+    padding: 0.1em;
+}
+/* || LIST STYLING */
+ul{
+    padding: 0.5em;
+    list-style-type: none;
+    background-color: rgba(0,0,0,1);
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 2px solid black;
+
+}
+li a,li a:visited{
+    color: white;
+}
+li a:hover, li a:focus{
+    color:rgba(255,255,255,0.8)
+}
+/* || IMAGE STYLING */
+.card{
+    padding:1rem;
+    border: 5px double black;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items:center;
+}
+.card figure{
+    display:flex;
+    flex-flow: column nowrap;
+}
+figure img{
+    border: 5px double black;
+    border-radius: 50%;
+}
+figcaption {
+    font-weight: bolder;
+    margin:1rem;
+    text-align: center;;
+}
+p{
+    font-family: monospace;
+    text-align: center;
+}
+/* || UTILITY CLASSES */
+.card{
+    scroll-margin-top:8rem;
+    width: min(100%,300px);
+}
+.nowrap{
+    white-space: nowrap;
+}
+/* ||SMALL */
+@media screen and (min-width: 576px){
+    .mainpart{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+
+    }
+    .card{
+        width: min(100%,350px);
+    }
+}
+@media screen and (min-width:768px){
+    .nav{
+        display: none;
+    }
+    .card{
+        width: min(100%,300px);
+    }
+}
+@media screen and (min-width:992px){
+    .card{
+        width: min(100%,375px);
+    }
+}
+@media screen and (min-width:1200px){
+    .card{
+        width: min(33%-0.25rem,200px);
+    }
+}
+@media screen and (max-height:425px) and (min-aspect-ratio:7/4){
+    body{
+        font-size: 1rem;;
+    }
+    .nav{
+        display: none;
+    }
+    .mainpart{
+        flex-flow:row nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+    .card figcaption, .card p{
+        font-size: 0.75rem;
+       }
+    .card{
+        width: min(100%, 225px);
+    }
+
+}
